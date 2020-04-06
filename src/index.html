@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animated.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -75,7 +76,7 @@
                     </div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/advantages/heart.png" alt="heart" class="advantages__icon">
+                    <img src="icons/advantages/heart.png" alt="heart" class="advantages__icon advantages__icon_animated">
                     <div class="advantages__subtitle">
                         Заботимся о здоровье
                     </div>
@@ -114,7 +115,7 @@
             </div>
             <form id="consultation-form" class="feed-form" action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
@@ -510,7 +511,7 @@
             <h2 class="title">отзывы клиентов</h2>
 
             <div class="feed__wrapper">
-                <div class="feed__item">
+                <div class="feed__item fadeInUp animated">
                     <img src="img/review_1.png" alt="Ирина Иванченко" class="feed__img">
                     <div class="feed__text">
                         <div class="feed__subtitle">Ирина Иванченко</div>
@@ -526,7 +527,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="feed__item">
+                <div class="feed__item fadeInUp animated">
                     <img src="img/review_2.png" alt="Иван Сёмочкин" class="feed__img">
                     <div class="feed__text">
                         <div class="feed__subtitle">Иван Сёмочкин</div>
@@ -540,7 +541,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="feed__item">
+                <div class="feed__item fadeInUp animated">
                     <img src="img/review_3.png" alt="Юлия Дашкина" class="feed__img">
                     <div class="feed__text">
                         <div class="feed__subtitle">Юлия Дашкина</div>
@@ -586,7 +587,7 @@
 
             <form class="feed-form feed-form_modal " action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
@@ -601,7 +602,7 @@
 
             <form class="feed-form feed-form_modal " action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="number">
+                <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">Купить</button>
             </form>
@@ -619,10 +620,17 @@
 
     </section>
 
+    <a href="#up" class="pageup">
+        <img src="icons/chevron.svg" alt="up" >
+    </a>
+    
+
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
