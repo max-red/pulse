@@ -9,11 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-cli": "^2.2.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2"
   },
@@ -22,5 +22,9 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp-htmlmin": "^5.0.1"
+  }
 }
