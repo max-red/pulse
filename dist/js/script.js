@@ -45,7 +45,7 @@ $(document).ready(function(){
     // Modal
 
     $('[data-modal=consultation]').on('click', function() {
-        $('.overlay, #consultation').fadeIn('slow');
+        $('.overlay, #call').fadeIn('slow');
         $('body').css('overflow', 'hidden');
         $('.modal__close').click(function(){
             $('body').css('overflow', 'auto');
@@ -53,7 +53,7 @@ $(document).ready(function(){
     });
 
     $('.modal__close').on('click', function(){
-        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+        $('.overlay, #call, #consultation, #order, #thanks').fadeOut('slow');
     });
 
     $('.button_mini').each(function(i){
@@ -96,25 +96,19 @@ $(document).ready(function(){
         });
     }
 
-    validateForms('#consultation-form');
-    validateForms('#form_1');
-    validateForms('#form_2');
+    validateForms('#call form');
+    validateForms('#consultation form');
+    validateForms('#consultation_2 form');
+    validateForms('#order form');
 
     // Form
 
     $('form').submit(function(e){
-        const isValid = $('#form_1').valid();
+        const id = e.target.id;
+        const isValid = $(`#${id}`).valid();
         if (!isValid) {
             return;
         }
-        const isValids = $('#form_2').valid();
-        if (!isValids) {
-            return;
-        }
-        // const isValidse = $('#consultation-form').valid();
-        // if (!isValidse) {
-        //     return;
-        // }
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -122,7 +116,7 @@ $(document).ready(function(){
             data: $(this).serialize()
         }).done(function() {
             $(this).find("input").val("");
-            $('#consultation, #order').fadeOut();
+            $('#call, #consultation, #consultation, #order').fadeOut();
             $('.overlay, #thanks').fadeIn('slow');
             $('form').trigger('reset');
         });
