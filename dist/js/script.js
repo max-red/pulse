@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 'use strict';
 
-// Slide
-
-=======
->>>>>>> master
 $(document).ready(function(){
+
+    // Slide
+
     $('.carousel__inner').slick({
         speed: 1200,
         /* adaptiveHeight: true, */
@@ -22,130 +20,13 @@ $(document).ready(function(){
             }
         ]
     });
-<<<<<<< HEAD
-});
 
-// Tabs
+    // Tab
 
-$('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-    $(this)
-      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-      .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-});
-
-function toggleSlide(item) {
-    $(item).each(function(i) {
-        $(this).on('click', function(e) {
-            e.preventDefault();
-            $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-            $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-        });
-    });
-}
-
-toggleSlide('.catalog-item__link');
-toggleSlide('.catalog-item__back');
-
-/* modal */
-
-$('[data-modal=consultation]').on('click', function() {
-    $('.overlay, #consultation').fadeIn('slow');
-    $("body").css("overflow", "hidden");
-    $(".modal__close").click(function(){
-        $("body").css("overflow", "auto");
-    }); 
-});
-
-$('.modal__close').on('click', function(){
-    $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
-});
-
-$('.button_mini').each(function(i){
-    $(this).on('click', function(){
-        $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
-        $('.overlay, #order').fadeIn('slow');
-        $("body").css("overflow", "hidden");
-        $(".modal__close").click(function(){
-            $("body").css("overflow", "auto");
-        });
-    });
-});
-
-function validateForms(form){
-    $(form).validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
-            },
-            phone: "required",
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-            name: {
-                required: "Пожалуйста, введите свое имя",
-                minlength: jQuery.validator.format("Введите {0} символа!")
-              },
-            phone: "Пожалуйста, введите свой номер телефона",
-            email: {
-              required: "Пожалуйста, введите свою почту",
-              email: "Неправильно введен адрес почты"
-            }
-        }
-    });
-};
-
-validateForms('#consultation-form');
-validateForms('#consultation form');
-validateForms('#order form');
-
-$('input[name=phone]').mask("+7 (999) 999-99-99");
-
-$('form').submit(function(e){
-    const isValid = $('.feed-form').valid();
-    if (!isValid) {
-        return;
-    }
-    e.preventDefault();
-    $.ajax({
-        type: "POST",
-        url: "mailer/smart.php",
-        data: $(this).serialize()
-    }).done(function() {
-        $(this).find("input").val("");
-        $('#consultation, #order').fadeOut();
-        $('.overlay, #thanks').fadeIn('slow');
-        $('form').trigger('reset');
-    });
-    return false;
-});
-
-/* Smooth scroll and pageup */
-
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 1500) {
-        $('.pageup').fadeIn();
-        } else {
-            $('.pageup').fadeOut();
-        }
-});
-
-$("a[href=#up]").click(function(){
-    const _href = $(this).attr("href");
-    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-    return false;
-});
-
-new WOW().init();
-=======
-    
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
-          .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-          .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+        .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+        .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
 
     function toggleSlide(item) {
@@ -154,17 +35,23 @@ new WOW().init();
                 e.preventDefault();
                 $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
                 $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
-            })
+            });
         });
-    };
+    }
 
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
 
-    /* modal */
-    $('[data-modal=consultation]').on('click', function(){
-        $('.overlay, #consultation').fadeIn('slow'); 
+    // Modal
+
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+        $('body').css('overflow', 'hidden');
+        $('.modal__close').click(function(){
+            $('body').css('overflow', 'auto');
+        }); 
     });
+
     $('.modal__close').on('click', function(){
         $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
     });
@@ -173,12 +60,18 @@ new WOW().init();
         $(this).on('click', function(){
             $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
             $('.overlay, #order').fadeIn('slow');
-        })
+            $('body').css('overflow', 'hidden');
+            $('.modal__close').click(function(){
+                $('body').css('overflow', 'auto');
+            });
+        });
     });
+
+    // Validate
 
     function validateForms(form){
         $(form).validate({
-            rules:{
+            rules: {
                 name: {
                     required: true,
                     minlength: 2
@@ -191,25 +84,37 @@ new WOW().init();
             },
             messages: {
                 name: {
-                    required: "Пожалуйста, введите имя",
+                    required: "Пожалуйста, введите свое имя",
                     minlength: jQuery.validator.format("Введите {0} символа!")
-                } ,
-                phone: "Пожалуйста, введите номер телефона",
+                  },
+                phone: "Пожалуйста, введите свой номер телефона",
                 email: {
-                  required: "Пожалуйста, введите адрес почты",
-                  email: "Неправильно введён адрес почты"
+                  required: "Пожалуйста, введите свою почту",
+                  email: "Неправильно введен адрес почты"
                 }
             }
         });
-    };
+    }
 
     validateForms('#consultation-form');
-    validateForms('#order form');
-    validateForms('#consultation form');
+    validateForms('#form_1');
+    validateForms('#form_2');
 
-    $('input[name=phone]').mask("+7 (999) 999-99-99");
+    // Form
 
     $('form').submit(function(e){
+        const isValid = $('#form_1').valid();
+        if (!isValid) {
+            return;
+        }
+        const isValids = $('#form_2').valid();
+        if (!isValids) {
+            return;
+        }
+        // const isValidse = $('#consultation-form').valid();
+        // if (!isValidse) {
+        //     return;
+        // }
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -224,10 +129,14 @@ new WOW().init();
         return false;
     });
 
-    /* Smooth scroll and pageup */
+    // Maska
+
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+    // Scroll
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 1600) {
+        if ($(this).scrollTop() > 1500) {
             $('.pageup').fadeIn();
             } else {
                 $('.pageup').fadeOut();
@@ -240,6 +149,4 @@ new WOW().init();
         return false;
     });
 
-    new WOW().init();
 });
->>>>>>> master

@@ -26,7 +26,7 @@
             </header>
 
             <div class="promo__wrapper">
-                <h1 class="promo__header">Подбор пульсометра</h1>
+                <h1 class="promo__header zoomIn wow" data-wow-duration = "2s">Подбор пульсометра</h1>
                 <h2 class="promo__subheader">с учётом Вашего уровня подготовки</h2>
 
                 <div class="promo__icons">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/advantages/heart.png" alt="heart" class="advantages__icon advantages__icon_animated">
+                    <img src="icons/advantages/heart.png" alt="heart" class="advantages__icon heartBeat wow" data-wow-duration = "2s" data-wow-iteration="1000">
                     <div class="advantages__subtitle">
                         Заботимся о здоровье
                     </div>
@@ -536,7 +536,7 @@
             <h2 class="title">отзывы клиентов</h2>
 
             <div class="feed__wrapper">
-                <div class="feed__item fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="feed__item fadeIn wow" data-wow-duration="2s" data-wow-delay="1s">
                     <img src="img/review_1.png" alt="Ирина Иванченко" class="feed__img">
                     <div class="feed__text">
                         <div class="feed__subtitle">Ирина Иванченко</div>
@@ -552,7 +552,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="feed__item fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="feed__item fadeIn wow" data-wow-duration="2s" data-wow-delay="1s">
                     <img src="img/review_2.png" alt="Иван Сёмочкин" class="feed__img">
                     <div class="feed__text">
                         <div class="feed__subtitle">Иван Сёмочкин</div>
@@ -566,7 +566,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="feed__item fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="feed__item fadeIn wow" data-wow-duration="2s" data-wow-delay="1s">
                     <img src="img/review_3.png" alt="Юлия Дашкина" class="feed__img">
                     <div class="feed__text">
                         <div class="feed__subtitle">Юлия Дашкина</div>
@@ -587,19 +587,15 @@
 
     <footer class="footer">
         <div class="footer__map">
-<<<<<<< HEAD
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade4a6d99d0d2b89bd8920aeec0c3592da10b955c2c97e34e8a9dc845fef989f1&amp;source=constructor"></iframe>
-=======
             <script async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0a425e78df5f02c36e088d8a4e33bc694a6e34fba4145137dbfdd6adcbe2ca18&amp;width=100%25&amp;height=630&amp;lang=ru_RU&amp;scroll=false"></script>
->>>>>>> master
         </div>
         <div class="footer__info">
             <address class="footer__addr">Москва, Мясницкий проезд, д.3с1</address>
             <a class="footer__phone" href="tel:+74999228974">8 (499) 922-89-74</a>
-            <div class="footer__social">
-                <a href="#" class="footer__social-item"><img src="icons/facebook.svg" alt="facebook"></a>
-                <a href="#" class="footer__social-item"><img src="icons/instagram.svg" alt="instagram"></a>
-                <a href="#" class="footer__social-item"><img src="icons/pinterest.svg" alt="pinterest"></a>
+            <div id="form_top" class="footer__social">
+                <a href="https://www.facebook.com/" class="footer__social-item"><img src="icons/facebook.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com/?hl=ru" class="footer__social-item"><img src="icons/instagram.svg" alt="instagram"></a>
+                <a href="https://www.pinterest.ru/" class="footer__social-item"><img src="icons/pinterest.svg" alt="pinterest"></a>
             </div>
         </div>
     </footer>
@@ -613,7 +609,7 @@
 
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
 
-            <form class="feed-form feed-form_modal" action="#">
+            <form id="form_1" class="feed-form feed-form_modal" action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
                 <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
@@ -628,7 +624,7 @@
 
             <div class="modal__descr">Пульсометр Polar FT1</div>
 
-            <form class="feed-form feed-form_modal " action="#">
+            <form id="form_2" class="feed-form feed-form_modal " action="#">
                 <input name="name" placeholder="Ваше имя" type="text">
                 <input name="phone" placeholder="Ваш телефон">
                 <input name="email" placeholder="Ваш E-mail" type="email">
@@ -658,6 +654,7 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.js"></script>
     <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
     <script src="js/script.js"></script>
 </body>
 </html>
